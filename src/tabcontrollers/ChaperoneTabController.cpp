@@ -496,7 +496,7 @@ float ChaperoneTabController::getBoundsMaxY() {
 			} else {
 				ci = 2;
 			}
-			if (isnan(result) || result < collisionBounds[b].vCorners[ci].v[1]) {
+            if (std::isnan(result) || result < collisionBounds[b].vCorners[ci].v[1]) {
 				result = collisionBounds[b].vCorners[ci].v[1];
 			}
 		}
