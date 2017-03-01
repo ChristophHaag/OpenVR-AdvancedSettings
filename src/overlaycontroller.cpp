@@ -109,7 +109,6 @@ void OverlayController::Init(QQmlEngine* qmlEngine) {
 	chaperoneTabController.initStage1();
 	moveCenterTabController.initStage1();
 	fixFloorTabController.initStage1();
-	audioTabController.initStage1();
 	statisticsTabController.initStage1();
 	settingsTabController.initStage1();
 	reviveTabController.initStage1(settingsTabController.forceRevivePage());
@@ -143,11 +142,6 @@ void OverlayController::Init(QQmlEngine* qmlEngine) {
 	});
 	qmlRegisterSingletonType<SteamVRTabController>("matzman666.advsettings", 1, 0, "FixFloorTabController", [](QQmlEngine*, QJSEngine*) {
 		QObject* obj = &getInstance()->fixFloorTabController;
-		QQmlEngine::setObjectOwnership(obj, QQmlEngine::CppOwnership);
-		return obj;
-	});
-	qmlRegisterSingletonType<SteamVRTabController>("matzman666.advsettings", 1, 0, "AudioTabController", [](QQmlEngine*, QJSEngine*) {
-		QObject* obj = &getInstance()->audioTabController;
 		QQmlEngine::setObjectOwnership(obj, QQmlEngine::CppOwnership);
 		return obj;
 	});
@@ -256,7 +250,6 @@ void OverlayController::SetWidget(QQuickItem* quickItem, const std::string& name
 	chaperoneTabController.initStage2(this, m_pWindow.get());
 	moveCenterTabController.initStage2(this, m_pWindow.get());
 	fixFloorTabController.initStage2(this, m_pWindow.get());
-	audioTabController.initStage2(this, m_pWindow.get());
 	statisticsTabController.initStage2(this, m_pWindow.get());
 	settingsTabController.initStage2(this, m_pWindow.get());
 	reviveTabController.initStage2(this, m_pWindow.get());
@@ -385,7 +378,6 @@ void OverlayController::OnTimeoutPumpEvents() {
 	chaperoneTabController.eventLoopTick();
 	settingsTabController.eventLoopTick();
 	reviveTabController.eventLoopTick();
-	audioTabController.eventLoopTick();
 	utilitiesTabController.eventLoopTick();
 	accessibilityTabController.eventLoopTick(vr::VRCompositor()->GetTrackingSpace());
 
