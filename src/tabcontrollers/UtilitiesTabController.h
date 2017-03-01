@@ -49,10 +49,11 @@ namespace advsettings {
 		float steamDesktopOverlayWidth() const;
 
 	public slots:
+		/*
 		void sendKeyboardInput(QString input);
 		void sendKeyboardEnter();
 		void sendKeyboardBackspace(int count);
-
+		*/
 		void setAlarmEnabled(bool enabled, bool notify = true);
 		void setAlarmIsModal(bool modal, bool notify = true);
 		void setAlarmTimeHour(int hour, bool notify = true);

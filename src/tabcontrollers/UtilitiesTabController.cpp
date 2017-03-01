@@ -1,7 +1,7 @@
 #include "UtilitiesTabController.h"
 #include <QQuickWindow>
 #include "../overlaycontroller.h"
-#include <Windows.h>
+//#include <Windows.h>
 #include <thread>
 
 // application namespace
@@ -43,6 +43,7 @@ namespace advsettings {
 		this->widget = widget;
 	}
 
+	/*
 	void fillKiStruct(INPUT& ip, WORD scanCode, bool keyup) {
 		ip.type = INPUT_KEYBOARD;
 		ip.ki.wVk = scanCode;
@@ -54,7 +55,7 @@ namespace advsettings {
 		ip.ki.wScan = 0;
 		ip.ki.dwExtraInfo = 0;
 		ip.ki.time = 0;
-	};
+	}
 
 	void UtilitiesTabController::sendKeyboardInput(QString input) {
 		int len = input.length();
@@ -126,7 +127,7 @@ namespace advsettings {
 		}
 	}
 
-	void UtilitiesTabController::sendKeyboardEnter() {
+    void UtilitiesTabController::sendKeyboardEnter() {
 		LPINPUT ips = new INPUT[2];
 		fillKiStruct(ips[0], VK_RETURN, false);
 		fillKiStruct(ips[1], VK_RETURN, true);
@@ -173,6 +174,7 @@ namespace advsettings {
 			delete ips;
 		}
 	}
+	*/
 
 
 	bool UtilitiesTabController::alarmEnabled() const {

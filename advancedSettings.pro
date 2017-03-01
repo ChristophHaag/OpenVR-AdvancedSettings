@@ -14,7 +14,6 @@ TEMPLATE = app
 
 SOURCES += src/main.cpp\
 		src/overlaycontroller.cpp \
-		src/tabcontrollers/AudioTabController.cpp \
 		src/tabcontrollers/ChaperoneTabController.cpp \
 		src/tabcontrollers/FixFloorTabController.cpp \
 		src/tabcontrollers/MoveCenterTabController.cpp \
@@ -23,14 +22,12 @@ SOURCES += src/main.cpp\
 		src/tabcontrollers/SteamVRTabController.cpp \
 		src/tabcontrollers/ReviveTabController.cpp \
 		src/tabcontrollers/UtilitiesTabController.cpp \
-		src/tabcontrollers/audiomanager/AudioManagerWindows.cpp \
 		src/tabcontrollers/PttController.cpp \
 		src/tabcontrollers/AccessibilityTabController.cpp \
 		src/utils/ChaperoneUtils.cpp
 
 HEADERS  += src/overlaycontroller.h \
 		src/logging.h \
-		src/tabcontrollers/AudioTabController.h \
 		src/tabcontrollers/ChaperoneTabController.h \
 		src/tabcontrollers/FixFloorTabController.h \
 		src/tabcontrollers/MoveCenterTabController.h \
@@ -39,8 +36,6 @@ HEADERS  += src/overlaycontroller.h \
 		src/tabcontrollers/SteamVRTabController.h \
 		src/tabcontrollers/ReviveTabController.h \
 		src/tabcontrollers/UtilitiesTabController.h \
-		src/tabcontrollers/AudioManager.h \
-		src/tabcontrollers/audiomanager/AudioManagerWindows.h \
 		src/tabcontrollers/PttController.h \
 		src/tabcontrollers/AccessibilityTabController.h \
 		src/utils/Matrix.h \

@@ -28,7 +28,6 @@
 #include "tabcontrollers/ChaperoneTabController.h"
 #include "tabcontrollers/MoveCenterTabController.h"
 #include "tabcontrollers/FixFloorTabController.h"
-#include "tabcontrollers/AudioTabController.h"
 #include "tabcontrollers/StatisticsTabController.h"
 #include "tabcontrollers/SettingsTabController.h"
 #include "tabcontrollers/ReviveTabController.h"
@@ -82,7 +81,6 @@ public: // I know it's an ugly hack to make them public to enable external acces
 	ChaperoneTabController chaperoneTabController;
 	MoveCenterTabController moveCenterTabController;
 	FixFloorTabController fixFloorTabController;
-	AudioTabController audioTabController;
 	StatisticsTabController statisticsTabController;
 	SettingsTabController settingsTabController;
 	ReviveTabController reviveTabController;
