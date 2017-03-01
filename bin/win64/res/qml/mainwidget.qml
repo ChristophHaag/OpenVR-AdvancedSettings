@@ -43,11 +43,6 @@ Rectangle {
         visible: false
     }
 
-    property AudioPage audioPage: AudioPage {
-        stackView: mainView
-        visible: false
-    }
-
     property RevivePage revivePage: RevivePage {
         stackView: mainView
         visible: false
