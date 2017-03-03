@@ -330,7 +330,9 @@ void OverlayController::OnTimeoutPumpEvents() {
 	while (pollNextEvent(m_ulOverlayHandle, &vrEvent)) {
 		switch (vrEvent.eventType) {
 			case vr::VREvent_MouseMove: {
-				QPoint ptNewMouse(vrEvent.data.mouse.x, vrEvent.data.mouse.y);
+				float h = (float) m_pWindow->height();
+				//std::cout << "Mouse x " << vrEvent.data.mouse.x << "; Mouse y " << vrEvent.data.mouse.y << "; new y: " << h - vrEvent.data.mouse.y << std::endl;
+				QPoint ptNewMouse(vrEvent.data.mouse.x, h - vrEvent.data.mouse.y);
 				if (ptNewMouse != m_ptLastMouse) {
 					QMouseEvent mouseEvent( QEvent::MouseMove, ptNewMouse, m_pWindow->mapToGlobal(ptNewMouse), Qt::NoButton, m_lastMouseButtons, 0 );
 					m_ptLastMouse = ptNewMouse;
@@ -341,7 +343,8 @@ void OverlayController::OnTimeoutPumpEvents() {
 			break;
 
 			case vr::VREvent_MouseButtonDown: {
-				QPoint ptNewMouse(vrEvent.data.mouse.x, vrEvent.data.mouse.y);
+				float h = (float) m_pWindow->height();
+				QPoint ptNewMouse(vrEvent.data.mouse.x, h - vrEvent.data.mouse.y);
 				Qt::MouseButton button = vrEvent.data.mouse.button == vr::VRMouseButton_Right ? Qt::RightButton : Qt::LeftButton;
 				m_lastMouseButtons |= button;
 				QMouseEvent mouseEvent(QEvent::MouseButtonPress, ptNewMouse, m_pWindow->mapToGlobal(ptNewMouse), button, m_lastMouseButtons, 0);
@@ -350,7 +353,8 @@ void OverlayController::OnTimeoutPumpEvents() {
 			break;
 
 			case vr::VREvent_MouseButtonUp: {
-				QPoint ptNewMouse(vrEvent.data.mouse.x, vrEvent.data.mouse.y);
+				float h = (float) m_pWindow->height();
+				QPoint ptNewMouse(vrEvent.data.mouse.x, h - vrEvent.data.mouse.y);
 				Qt::MouseButton button = vrEvent.data.mouse.button == vr::VRMouseButton_Right ? Qt::RightButton : Qt::LeftButton;
 				m_lastMouseButtons &= ~button;
 				QMouseEvent mouseEvent(QEvent::MouseButtonRelease, ptNewMouse, m_pWindow->mapToGlobal(ptNewMouse), button, m_lastMouseButtons, 0);
