@@ -1,6 +1,7 @@
 #include "ChaperoneTabController.h"
 #include <QQuickWindow>
 #include "../overlaycontroller.h"
+#include <math.h> //isnan()
 
 // application namespace
 namespace advsettings {

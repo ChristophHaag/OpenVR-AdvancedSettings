@@ -1,6 +1,7 @@
 
 #include "ChaperoneUtils.h"
 #include <iostream>
+#include <math.h> //NAN, isnan()
 
 namespace utils {
 
